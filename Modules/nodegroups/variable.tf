@@ -18,19 +18,19 @@ variable "source_security_group_id" {
 
 variable vpc_id {
   description = "VPC ID from which belongs the subnets"
-  default     = "vpc-03e64f505607a67f8"
+  default     = "vpc-0716d07ac79150cc1"
   type        = string 
 }
 
 variable "private_subnet_ids" {
   type        = list(string)
-  default     = ["subnet-06b6078f5d696cb02", "subnet-0a9b2447e7d945fef"]
+  default     = ["subnet-06067acf739f83df4", "subnet-0b96619b7cb8f060f"]
   description = "List of private subnet IDs."
 }
 
 variable "public_subnet_ids" {
   type        = list(string)
-  default     = ["subnet-0c58daa572b481d4e", "subnet-069409343f8b41b20"]
+  default     = ["subnet-069f0aa79c28654fb", "subnet-065677af2b472b41b"]
   description = "List of public subnet IDs."
 }
 
