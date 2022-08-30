@@ -9,7 +9,11 @@ resource "aws_eks_cluster" "main" {
     endpoint_public_access  = var.endpoint_public_access
     subnet_ids = var.eks_cluster_subnet_ids
   }
-  
+    
+  provisioner "local-exec" {
+  command = "aws eks --region us-east-1 update-kubeconfig --name ns_cluster"
+  }
+
 
 }
 
