@@ -13,7 +13,7 @@ module "ns_vpc" {
 module "ns_eks" {
     source                     = "./modules/eks"
     eks_cluster_name           = "NS_cluster"
-    eks_cluster_subnet_ids     = ["subnet-06b6078f5d696cb02", "subnet-0a9b2447e7d945fef", "subnet-0c58daa572b481d4e", "subnet-069409343f8b41b20"]
+    eks_cluster_subnet_ids     = ["subnet-06067acf739f83df4", "subnet-0b96619b7cb8f060f", "subnet-069f0aa79c28654fb", "subnet-065677af2b472b41b"]
     cluster_sg_name            = "ns_security_group"
     endpoint_private_access    = "true"
     endpoint_public_access     = "false"
@@ -23,9 +23,9 @@ module "ns_nodegroup" {
     source                     = "./modules/nodegroups"
     node_group_name            = "Ns-node-group"
     cluster_name               = module.ns_eks.cluster_name
-    vpc_id                     = "vpc-03e64f505607a67f8"
-    private_subnet_ids         = ["subnet-06b6078f5d696cb02", "subnet-0a9b2447e7d945fef"]
-    public_subnet_ids          = ["subnet-0c58daa572b481d4e", "subnet-069409343f8b41b20"]
+    vpc_id                     = "vpc-0716d07ac79150cc1"
+    private_subnet_ids         = ["subnet-06067acf739f83df4", "subnet-0b96619b7cb8f060f"]
+    public_subnet_ids          = ["subnet-069f0aa79c28654fb", "subnet-065677af2b472b41b"]
     ami_type                   = "AL2_x86_64"
     disk_size                  = 20
     instance_types             = ["t3.medium"]
