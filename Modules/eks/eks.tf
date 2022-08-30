@@ -11,7 +11,7 @@ resource "aws_eks_cluster" "main" {
   }
     
   provisioner "local-exec" {
-  command = "aws eks --region us-east-1 update-kubeconfig --name ns_cluster"
+  command = "aws eks --region us-east-1 update-kubeconfig --name NS_cluster"
   }
 
 
